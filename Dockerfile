@@ -1,5 +1,5 @@
 # First stage: build the application
-FROM maven:3.8.6-openjdk-17 AS builder
+FROM maven:3.9.0-openjdk-17 AS builder
 WORKDIR /app
 COPY pom.xml ./   # Copy the pom.xml first for better caching
 COPY src ./src    # Copy the source files
