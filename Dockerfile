@@ -1,8 +1,8 @@
 # First stage: build the application
-FROM maven:3.9.0-openjdk-17 AS builder
+FROM maven:3.8.4-openjdk-17 AS builder
 WORKDIR /app
-COPY pom.xml ./   # Copy the pom.xml first for better caching
-COPY src ./src    # Copy the source files
+COPY pom.xml ./   
+COPY src ./src    
 RUN mvn clean package -DskipTests
 
 # Second stage: create a minimal image
